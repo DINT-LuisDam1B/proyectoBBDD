@@ -27,6 +27,9 @@ namespace proyectoBBDD
             tema6bdluisEntities contexto = new tema6bdluisEntities();
             contexto.CLIENTES.Load();
 
+            CollectionViewSource vista = new CollectionViewSource();
+            vista.Source = contexto.CLIENTES.Local;
+            ClientesDataGrid.DataContext = vista;
             //enlazar origen de datos con datacontex de listbox
             listadoDeDatos_ListBox.DataContext = contexto.CLIENTES.Local;
 

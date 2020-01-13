@@ -73,6 +73,37 @@
                 </StackPanel>
                 
             </TabItem>
+
+            <TabItem Header="DataGrid">
+
+                <DockPanel>
+                    <Button x:Name="Actualizar_Button" DockPanel.Dock="Bottom" Content="Actualizar" Width="120"
+                            HorizontalAlignment="Left" Margin="10"/>
+                    <DataGrid x:Name="ClientesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Identificador" Binding="{Binding id}" Width="2*"/>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="5*"/>
+                            <DataGridTextColumn Header="Apellido" Binding="{Binding apellido}" Width="5*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Filtrar">
+                <DockPanel>
+                    <StackPanel x:Name="FiltrosStackPanel" DockPanel.Dock="Top" Orientation="Horizontal">
+                        <TextBlock x:Name="nombreTextBlock" Text="Nombre"/>
+                        <TextBox x:Name="nombreTextBox"/>
+                        <Button x:Name="filtrarButton" Content="Filtrar"/>
+                    </StackPanel>
+                    <DataGrid x:Name="FiltrarClientesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                    
+                </DataGrid>
+                    
+                </DockPanel>
+                
+                
+            </TabItem>
         </TabControl>
         
     </Grid>
