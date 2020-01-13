@@ -32,6 +32,7 @@ namespace proyectoBBDD
 
             //enlazar origend de datos con itemsourse de combobox
             eliminar_Combobox.ItemsSource = contexto.CLIENTES.Local;
+            //update
         }
     }
 }
